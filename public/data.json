@@ -2,7 +2,7 @@
     "projects": [
         {
             "id": "tmv",
-            "title": "TeamView",
+            "title": "Team structure Visualisation",
             "description": [
                 "A dynamic and responsive internal frontend tool to visualise and explore complex agile team structures across a 200k+ employee organisation.",
                 "It has both graph and list views, the latter elevated and optimised for mobile.",
@@ -140,8 +140,6 @@
                 "ReactJS"
             ],
             "language": [
-                "Typescript",
-                "Python",
                 "Javascript"
             ],
             "library": [
