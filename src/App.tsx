@@ -40,7 +40,7 @@ function App() {
       <h2>My Projects</h2>
       <div id="card-container">
         {filteredData.map((project) => (
-          <Card data={project}></Card>
+          <Card key={project.id} data={project}></Card>
         ))}
       </div>
     </>

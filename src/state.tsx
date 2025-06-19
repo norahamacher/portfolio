@@ -21,10 +21,11 @@ function filterData(projects: readonly Project[], filters: readonly ProjectFilte
         return filters.every(filter => {
             switch (filter.type) {
                 case "workplace":
-                case "language":
+
                     return project[filter.type].toLowerCase() === filter.value.toLowerCase();
                 case "framework":
                 case "library":
+                case "language":
                     return project[filter.type].some(f => f.toLowerCase() === filter.value.toLowerCase());
                 case "year":
                     const yearValue = parseInt(filter.value);
@@ -52,11 +53,12 @@ const extractAvailableFilterfromData = (projects: Project[]) => {
                     break;
                 case "framework":
                 case "library":
+                case "language":
                     for (const value of project[filterType]) {
                         uniqueValues.add(value)
                     }
                     break;
-                case "language":
+
                 case "workplace":
                     projectValue = project[filterType];
                     if (projectValue) {

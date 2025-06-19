@@ -9,15 +9,22 @@ export type ProjectFilter = {
     value: string
 }
 
+
+export type Link = {
+    type: string,
+    src: string,
+    title: string,
+}
 export type Project = {
     "title": string,
-    "description": string,
+    "description": string[],
     "year": number[],
     "framework": string[],
-    "language": string,
+    "language": string[],
     "library": string[],
     "workplace": string,
     "id": string,
     "media": Media[]
+    "url": Link[],
 
 }

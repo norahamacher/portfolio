@@ -1,8 +1,15 @@
 {
     "projects": [
         {
+            "id": "tmv",
             "title": "TeamView",
-            "description": "A dynamic and responsive internal frontend tool to visualise and explore complex agile team structures across a 200k+ employee organisation, with both graph and list views, the latter elevated and optimised for mobile. Due to this being an internal corporate page, no live demo is available. Check out the video below!",
+            "description": [
+                "A dynamic and responsive internal frontend tool to visualise and explore complex agile team structures across a 200k+ employee organisation.",
+                "It has both graph and list views, the latter elevated and optimised for mobile.",
+                "This was a greenfield project, and it was very rewarding work to build a very complex app from scratch in close collaboration with designers, stakeholders and backend.",
+                "Through this app it became easier for any Woolworths employee to view and explore their own or others teams and their connection within the organisation, not only in a static org chart.",
+                "Due to this being an internal corporate page, no live demo is available. Check out the video below!"
+            ],
             "media": [
                 {
                     "title": "Video Demo: TeamView Visualisation",
@@ -18,15 +25,22 @@
             "framework": [
                 "Lit"
             ],
-            "language": "Typescript",
+            "language": [
+                "Typescript"
+            ],
             "library": [
                 "d3"
             ],
             "workplace": "Woolworths Group"
         },
         {
+            "id": "wflw",
             "title": "Workflows",
-            "description": "Automated workflows for requesting and approving structural changes to teams or members, replacing manual email/spreadsheet-based processes. This was developed together with an admin portal to list and take action on those workflows, and a detailed view of the workflows to facilitate actions for authorised team members. The detail page and admin portal have real-time updates via polling, reducing human errors and significantly improving process efficiency and visibility.",
+            "description": [
+                "Automated workflows for requesting and approving structural changes to teams or members, replacing manual email/spreadsheet-based processes.",
+                "This was developed in conjunction with an admin portal to list and take action on those workflows, and a detailed view of the workflows to facilitate actions for authorised team members. The detail page and admin portal have real-time updates via polling.",
+                "This feature greatly reduced human errors and significantly improving process efficiency and visibility."
+            ],
             "media": [
                 {
                     "title": "Video Demo: Workflows",
@@ -40,14 +54,27 @@
             "framework": [
                 "Lit"
             ],
-            "language": "Typescript",
+            "language": [
+                "Typescript"
+            ],
             "library": [],
             "workplace": "Woolworths Group"
         },
         {
+            "id": "wds",
             "title": "Design System Components",
-            "description": "Blabla",
-            "media": [],
+            "description": [
+                "During my time at Woolworths Group I contributed to the internal Design System for use across platforms with consistency.",
+                "The components are written in highly performant Lit, with a focus on scalability. Many of them make use of the web components slot mechanic and avoid passing in complex structures as properties in order to maintain ease of use and serialisability.",
+                "Storybook as a tool has been invaluable to develop robust components and the aim was to, along with unit tests, cover all the different states a component can be in."
+            ],
+            "media": [
+                {
+                    "title": "Screenshot of design system in Storybook",
+                    "type": "image",
+                    "src": "./designSystem.png"
+                }
+            ],
             "year": [
                 2023,
                 2024,
@@ -56,22 +83,107 @@
             "framework": [
                 "Lit"
             ],
-            "language": "Typescript",
+            "language": [
+                "Typescript"
+            ],
             "library": [],
             "workplace": "Woolworths Group"
         },
         {
+            "id": "reporting",
+            "title": "Reporting pages",
+            "description": [
+                "Developed a versatile framework to show filterable reports in a table. By maintaining a strict separation of views and model (MVC), the underlying structure will display one or more tables along with filters - without any knowledge of what it is displaying.",
+                "Two views exist that access different backend APIs to show different kinds of data."
+            ],
+            "media": [],
+            "year": [
+                2025
+            ],
+            "framework": [
+                "Lit"
+            ],
+            "language": [
+                "Typescript"
+            ],
+            "library": [],
+            "workplace": "Woolworths Group"
+        },
+        {
+            "id": "diversity",
+            "title": "MultiViz - Visualising diversity and liveability in Australian Cities, Vancouver and Auckland",
+            "description": [
+                "This tool provides valuable insight of diversity in cities.",
+                "Using Mapbox and the curated dataset (between 20 and 30 MB), a multitude of diversity or liveability indices, such as ethnic, income, gender diversity are mapped to the neighbourhoods of the cities.",
+                "There are multiple dimensions to be mapped to visual channels there, such as the colour of the map, but also bars that are rendered on top - height, width and colour of those bars can be mapped to parameters as well.",
+                "By hovering over the colours in the menu, the visualisation updates immediately, and one can interact with the bars or apply filters in the menu."
+            ],
+            "url": [
+                {
+                    "title": "MultiViz Urban Diversity",
+                    "type": "website",
+                    "src": "https://app.urbandiversity.cloud.edu.au/"
+                }
+            ],
+            "media": [
+                {
+                    "title": "Screenshot of MultiViz",
+                    "type": "image",
+                    "src": "./diversity.png"
+                }
+            ],
+            "year": [
+                2021,
+                2022
+            ],
+            "framework": [
+                "ReactJS"
+            ],
+            "language": [
+                "Typescript",
+                "Python",
+                "Javascript"
+            ],
+            "library": [
+                "MapBox",
+                "MaterialUI"
+            ],
+            "workplace": "Monash University - Data Science and AI Platform"
+        },
+        {
+            "id": "imp",
             "title": "IMP - Integrated Microscopy and Electronics",
-            "description": "Blabla",
-            "url": "blabla",
+            "description": [
+                "An ARDC project in close collaboration with Electron Microscopy at Monash University. I extended an existing framework, Neuroglancer, to be able to show a differenc kind of data and customise it",
+                "Neuroglancer is a powerful, WebGL-based viewer for volumetric data, primarily used in neuroscience to visualize extremely large 3D datasets like electron microscopy images of brains. The EM datsets are different and I also set up a pipeline in Python to convert them to the correct format",
+                "In addition, I tweaked the menu and added more functionalities, such as being able to filter objects in the renderer, colour them in different colours or assign them to custom groups to toggle on and off.",
+                "Lastly I built a ReactJS portal page, incorporating OAuth, for dataset selection."
+            ],
+            "url": [
+                {
+                    "title": "DOI on bridges Monash",
+                    "type": "doi",
+                    "src": "https://bridges.monash.edu/articles/code/IMP_Integrated_Microscopy_and_Proteomics_-_Application_and_Frontend/23357999"
+                },
+                {
+                    "title": "Git Repository",
+                    "type": "git",
+                    "src": "https://github.com/DeMarcoLab/IMP"
+                }
+            ],
             "media": [],
             "year": [
                 2022
             ],
             "framework": [
-                "Vanilla"
+                "Neuroglancer",
+                "ReactJS"
             ],
-            "language": "Typescript",
+            "language": [
+                "Typescript",
+                "Python",
+                "Javascript"
+            ],
             "library": [],
             "workplace": "Monash University - Data Science and AI Platform"
         }

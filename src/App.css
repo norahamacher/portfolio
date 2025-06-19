@@ -2,12 +2,28 @@
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  ;
+}
+
+body {
+  background: #311447;
+
 }
 
 #card-container {
   display: flex;
   flex-direction: row;
   gap: 12px;
-  max-width: 80vw;
+  width: 90vw;
+  max-width: 2048px;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+h2 {
+  color: white;
 }
