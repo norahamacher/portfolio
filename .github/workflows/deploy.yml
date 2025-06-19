@@ -1,5 +1,5 @@
 # Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll with GitHub Pages dependencies preinstalled
+name: Deploy App to Github Pages
 
 on:
   # Runs on pushes targeting the default branch
@@ -19,7 +19,7 @@ permissions:
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
   group: "pages"
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   # Build job
@@ -28,15 +28,31 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # Use a stable Node.js version, e.g., 18 or 20
+
+      - name: Install dependencies
+        run: npm install # Or yarn install if you use yarn
+
+      - name: Build React App
+        run: npm run build # This command generates your 'dist' folder
+        env:
+          # Optional: Set environment variables required for your build,
+          # e.g., for CRA, you might need PUBLIC_URL if not configured in package.json
+          PUBLIC_URL: /${{ github.event.repository.name }} # For React Router or static assets base path
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+
         with:
           source: ./dist
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist' # Upload the 'dist' directory as the artifact
 
   # Deployment job
   deploy:
