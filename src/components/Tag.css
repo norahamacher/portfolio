@@ -1,0 +1,29 @@
+.tag {
+    font-size: 12px;
+    border-radius: 9px;
+    padding: 4px 8px;
+    color: white;
+}
+
+.year {
+    background-color: #c99c42;
+    color: black;
+}
+
+.framework {
+    background-color: #2d17eb;
+    color: white;
+}
+
+.language {
+    background-color: #870e1e;
+    color: white;
+}
+
+.library {
+    background-color: #38573b;
+}
+
+.workplace {
+    background-color: #453f40;
+}

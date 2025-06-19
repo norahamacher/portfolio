@@ -1,0 +1,13 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+#card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  max-width: 80vw;
+  flex-wrap: wrap;
+}
