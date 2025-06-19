@@ -107,7 +107,7 @@ export const useStore = create<Store>()((set) => ({
             };
         })
     },
-    init: (data: Project[]) => set((state) => {
+    init: (data: Project[]) => set(() => {
         return {
             data: data,
             filteredData: data,

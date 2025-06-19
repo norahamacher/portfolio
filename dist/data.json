@@ -1,0 +1,79 @@
+{
+    "projects": [
+        {
+            "title": "TeamView",
+            "description": "A dynamic and responsive internal frontend tool to visualise and explore complex agile team structures across a 200k+ employee organisation, with both graph and list views, the latter elevated and optimised for mobile. Due to this being an internal corporate page, no live demo is available. Check out the video below!",
+            "media": [
+                {
+                    "title": "Video Demo: TeamView Visualisation",
+                    "type": "video",
+                    "src": "./tmvDemo.mp4"
+                }
+            ],
+            "year": [
+                2023,
+                2024,
+                2025
+            ],
+            "framework": [
+                "Lit"
+            ],
+            "language": "Typescript",
+            "library": [
+                "d3"
+            ],
+            "workplace": "Woolworths Group"
+        },
+        {
+            "title": "Workflows",
+            "description": "Automated workflows for requesting and approving structural changes to teams or members, replacing manual email/spreadsheet-based processes. This was developed together with an admin portal to list and take action on those workflows, and a detailed view of the workflows to facilitate actions for authorised team members. The detail page and admin portal have real-time updates via polling, reducing human errors and significantly improving process efficiency and visibility.",
+            "media": [
+                {
+                    "title": "Video Demo: Workflows",
+                    "type": "video",
+                    "src": "./workflowDemo.mp4"
+                }
+            ],
+            "year": [
+                2024
+            ],
+            "framework": [
+                "Lit"
+            ],
+            "language": "Typescript",
+            "library": [],
+            "workplace": "Woolworths Group"
+        },
+        {
+            "title": "Design System Components",
+            "description": "Blabla",
+            "media": [],
+            "year": [
+                2023,
+                2024,
+                2025
+            ],
+            "framework": [
+                "Lit"
+            ],
+            "language": "Typescript",
+            "library": [],
+            "workplace": "Woolworths Group"
+        },
+        {
+            "title": "IMP - Integrated Microscopy and Electronics",
+            "description": "Blabla",
+            "url": "blabla",
+            "media": [],
+            "year": [
+                2022
+            ],
+            "framework": [
+                "Vanilla"
+            ],
+            "language": "Typescript",
+            "library": [],
+            "workplace": "Monash University - Data Science and AI Platform"
+        }
+    ]
+}
