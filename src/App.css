@@ -21,14 +21,24 @@ body {
 }
 
 #card-container {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 12px;
   width: 90vw;
   max-width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
   position: relative;
+}
+
+@media (min-width: 944px) {
+  #card-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1424px) {
+  #card-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 h2 {

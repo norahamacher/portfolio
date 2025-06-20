@@ -13,7 +13,7 @@ const Filters: React.FC = () => {
     const availableFilters = useStore((state) => state.availableFilters);
     const activeFilters = useStore((state) => state.filters);
 
-    const [open, toggleOpen] = useState(true);
+    const [open, toggleOpen] = useState(false);
     const arrow = open ? " △ " : " ▽ ";
     const dropDownClasses = `filters ${open ? "open" : "closed"}`;
 

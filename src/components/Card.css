@@ -1,6 +1,6 @@
 .card {
     border-radius: 8px;
-    padding: 32px 24px 12px;
+    padding: 32px 24px 6px;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -8,12 +8,11 @@
     font-size: 12pt;
     color: var(--app-primary-dark);
     background: var(--app-primary-light);
-
+    box-sizing: border-box;
     min-width: 420px;
-    max-width: 500px;
-
-    flex-grow: 1;
-    height: fit-content;
+    max-width: 100%;
+    width: 100%;
+    transition: width 0.4s ease-in-out;
 }
 
 

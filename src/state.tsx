@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Category, type Project, type ProjectFilter, type TagData, type UIProject } from './domain'
+import { Category, OR_CATEGORIES, type Project, type ProjectFilter, type TagData, type UIProject } from './domain'
 
 
 type Store = {
@@ -53,7 +53,7 @@ function filterData(projects: readonly Project[], filters: readonly ProjectFilte
         return convertDataToUi(projects);
     }
     const filtered = projects.filter(project => {
-        // A project must match ALL provided filters to be included
+        // A 
         return filters.every(filter => {
 
             switch (filter.type) {
@@ -130,8 +130,15 @@ export const useStore = create<Store>()((set) => ({
 
     addFilter: (filter: ProjectFilter) => {
         set((state) => {
-            const filtered = [...state.filters, filter];
+            let filtered;
+            if (OR_CATEGORIES.includes(filter.type)) {
+                filtered = [...state.filters].filter(f => f.type !== filter.type);
+                console.log(filtered);
+            } else {
+                filtered = [...state.filters];
+            }
 
+            filtered = [...filtered, filter];
             return {
                 filters: filtered,
                 filteredData: filterData(state.data, filtered)

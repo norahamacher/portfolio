@@ -1,5 +1,6 @@
 import type { Media } from "./components/Media";
 
+
 export enum Category {
     WORKPLACE = "workplace",
     LANGUAGE = "language",
@@ -8,6 +9,8 @@ export enum Category {
     LIBRARY = "library",
     MOTIVATION = "motivation",
 }
+
+export const OR_CATEGORIES = [Category.WORKPLACE, Category.MOTIVATION]
 
 export enum Motivation {
     WORK = "work",

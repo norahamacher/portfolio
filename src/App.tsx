@@ -6,7 +6,7 @@ import { useStore } from './state';
 import type { Project } from './domain';
 import Card from './components/Card';
 import Filters from './components/Filters';
-
+import { AnimatePresence } from 'framer-motion';
 function App() {
   const filteredData = useStore((state) => state.filteredData);
   const init = useStore((state) => state.init);
@@ -39,9 +39,11 @@ function App() {
       <h2>Nora Hamacher's Projects</h2>
       <Filters></Filters>
       <div id="card-container">
-        {filteredData.map((project) => (
-          <Card key={project.id} data={project}></Card>
-        ))}
+        <AnimatePresence>
+          {filteredData.map((project) => (
+            <Card key={project.id} data={project}></Card>
+          ))}
+        </AnimatePresence>
       </div>
       <div className={notFoundClass}> No projects found for the selected filters.</div>
     </>
