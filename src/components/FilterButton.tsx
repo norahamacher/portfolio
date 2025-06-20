@@ -1,36 +1,32 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './FilterButton.css'
 import { useStore } from '../state';
-import type { Filter } from '../domain';
+import type { Category } from '../domain';
 
 interface FilterButtonProps {
-    label: string;
-    type: Filter,
+    value: string;
+    type: Category,
 }
 
-const FilterButton: React.FC<FilterButtonProps> = ({ label, type }) => {
+const FilterButton: React.FC<FilterButtonProps> = ({ value, type }) => {
     const addFilter = useStore((state) => state.addFilter);
     const removeFilter = useStore((state => state.removeFilter));
-
-    const [isActive, setActive] = useState<boolean>(false);
-
+    const filters = useStore((state) => state.filters);
+    const isActive = filters.some(f => f.value === value);
 
     const handleClick = () => {
-        setActive(!isActive);
         if (isActive) {
-            addFilter({ type: type, value: label })
+            removeFilter({ type: type, value: value })
         } else {
-            removeFilter({ type: type, value: label })
+            addFilter({ type: type, value: value })
         }
     }
 
-    const className = `filter-btn ${isActive ? "active" : ""}`;
+    const className = `filter-btn ${isActive ? "active" : ""} ${type}`;
     return (
 
-        <div onClick={handleClick} className={className}>{label}</div>
-
-
+        <div onClick={handleClick} className={className}>{value}</div>
     )
 }
 

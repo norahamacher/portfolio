@@ -1,27 +1,17 @@
 import React from 'react'
-
 import './Card.css'
-
-import type { Project } from '../domain';
+import type { UIProject } from '../domain';
 import Tag from './Tag';
 import Media from './Media';
 
 interface CardProps {
-    data: Project
+    data: UIProject
 }
 
 const Card: React.FC<CardProps> = ({ data }) => {
-
-
-    const libs = data.library.map(lib => { return { type: "library", value: lib } })
-    const langs = data.language.map(lang => { return { type: "language", value: lang } })
-    const frameworks = data.framework.map(fram => { return { type: "framework", value: fram } })
-    const years = data.year.map(year => { return { type: "year", value: year.toString() } });
-    const workplace = { type: "workplace", value: data.workplace }
-    const tags = [...libs, ...langs, ...years, ...frameworks, workplace];
-
     const links = data.url ?? [];
-    console.log(links)
+    const tags = data.tags;
+    const media = data.media;
     return (
         <>
             <div className="card">
@@ -31,13 +21,13 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 ))}</div>
 
                 <div className="media">
-                    {data.media.map((medium) => (
+                    {media.map((medium) => (
                         <Media key={medium.title} media={medium}></Media>
                     ))}
                 </div>
                 <div className="links">
                     {links.map((link) => (
-                        <span>{link.type}: <a href={link.src}>{link.title}</a></span>
+                        <span key={link.title}>{link.type}: <a href={link.src}>{link.title}</a></span>
                     ))
                     }
                 </div>

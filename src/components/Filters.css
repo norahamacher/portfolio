@@ -1,0 +1,42 @@
+.filters {
+    display: flex;
+    gap: 12px;
+}
+
+.filters.closed {
+    display: none;
+}
+
+.menu {
+    width: 100%;
+    background: var(--app-primary-light);
+    color: var(--app-primary-dark);
+    padding: 4px;
+    margin-bottom: 8px;
+}
+
+.anchor {
+    display: flex;
+    place-items: center;
+    position: relative;
+    gap: 4px;
+
+}
+
+.anchor>button {
+    margin-left: auto;
+}
+
+.anchor>span {
+    margin-right: 24px;
+}
+
+.category-title:first-letter {
+    text-transform: uppercase;
+}
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}

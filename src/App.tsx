@@ -5,13 +5,14 @@ import { useStore } from './state';
 
 import type { Project } from './domain';
 import Card from './components/Card';
+import Filters from './components/Filters';
 
 function App() {
   const filteredData = useStore((state) => state.filteredData);
-  //const availableFilters = useStore((state => state.availableFilters));
   const init = useStore((state) => state.init);
-  //const [loading, setLoading] = useState(true);
 
+  const hasData = filteredData.length > 0;
+  const notFoundClass = `not-found ${hasData ? "hidden" : ""}`;
   useEffect(() => {
     const loadData = async () => {
       try {
@@ -26,9 +27,7 @@ function App() {
         init(data.projects);
       } catch (err) {
         console.error("Failed to load local JSON:", err);
-        // You might want to set an error state here in a real app
       } finally {
-        //  setLoading(false);
       }
     };
 
@@ -37,12 +36,14 @@ function App() {
   }, [])
   return (
     <>
-      <h2>My Projects</h2>
+      <h2>Nora Hamacher's Projects</h2>
+      <Filters></Filters>
       <div id="card-container">
         {filteredData.map((project) => (
           <Card key={project.id} data={project}></Card>
         ))}
       </div>
+      <div className={notFoundClass}> No projects found for the selected filters.</div>
     </>
   )
 }

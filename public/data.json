@@ -2,7 +2,7 @@
     "projects": [
         {
             "id": "tmv",
-            "title": "Team structure Visualisation",
+            "title": "Team Structure Visualisation",
             "description": [
                 "A dynamic and responsive internal frontend tool to visualise and explore complex agile team structures across a 200k+ employee organisation.",
                 "It has both graph and list views, the latter elevated and optimised for mobile.",
@@ -31,7 +31,9 @@
             "library": [
                 "d3"
             ],
-            "workplace": "Woolworths Group"
+            "workplace": "Woolworths Group",
+            "featured": true,
+            "motivation": "work"
         },
         {
             "id": "wflw",
@@ -58,7 +60,8 @@
                 "Typescript"
             ],
             "library": [],
-            "workplace": "Woolworths Group"
+            "workplace": "Woolworths Group",
+            "motivation": "work"
         },
         {
             "id": "wds",
@@ -87,13 +90,15 @@
                 "Typescript"
             ],
             "library": [],
-            "workplace": "Woolworths Group"
+            "workplace": "Woolworths Group",
+            "featured": true,
+            "motivation": "work"
         },
         {
             "id": "reporting",
             "title": "Reporting pages",
             "description": [
-                "Developed a versatile framework to show filterable reports in a table. By maintaining a strict separation of views and model (MVC), the underlying structure will display one or more tables along with filters - without any knowledge of what it is displaying.",
+                "Developed a versatile framework to show filterable reports in a table. By maintaining a strict separation of concerns, the underlying structure will display one or more tables along with filters - without any domain knowledge.",
                 "Two views exist that access different backend APIs to show different kinds of data."
             ],
             "media": [],
@@ -107,7 +112,8 @@
                 "Typescript"
             ],
             "library": [],
-            "workplace": "Woolworths Group"
+            "workplace": "Woolworths Group",
+            "motivation": "work"
         },
         {
             "id": "diversity",
@@ -146,7 +152,9 @@
                 "MapBox",
                 "MaterialUI"
             ],
-            "workplace": "Monash University - Data Science and AI Platform"
+            "workplace": "Monash University - Data Science and AI Platform",
+            "featured": true,
+            "motivation": "work"
         },
         {
             "id": "imp",
@@ -183,7 +191,8 @@
                 "Javascript"
             ],
             "library": [],
-            "workplace": "Monash University - Data Science and AI Platform"
+            "workplace": "Monash University - Data Science and AI Platform",
+            "motivation": "work"
         }
     ]
 }

@@ -1,9 +1,10 @@
 import { create } from 'zustand'
-import { AVAILABLE_FILTERS, type Project, type ProjectFilter } from './domain'
+import { Category, type Project, type ProjectFilter, type TagData, type UIProject } from './domain'
+
 
 type Store = {
     filters: ProjectFilter[],
-    filteredData: readonly Project[],
+    filteredData: readonly UIProject[],
     availableFilters: readonly ProjectFilter[],
     data: readonly Project[],
     addFilter: (filter: ProjectFilter) => void,
@@ -11,23 +12,59 @@ type Store = {
     init: (data: Project[]) => void;
 }
 
-function filterData(projects: readonly Project[], filters: readonly ProjectFilter[]): Project[] {
+function convertDataToUi(projects: readonly Project[]): UIProject[] {
+
+    const getTags = (data: Project): TagData[] => {
+        const libs = data.library.map(lib => { return { type: Category.LIBRARY, value: lib } })
+        const langs = data.language.map(lang => { return { type: Category.LANGUAGE, value: lang } })
+        const frameworks = data.framework.map(fram => { return { type: Category.FRAMEWORK, value: fram } })
+        const years = data.year.map(year => { return { type: Category.YEAR, value: year.toString() } });
+        const workplace = data.workplace ? [{ type: Category.WORKPLACE, value: data.workplace }] : [];
+        const motivation = data.motivation ? [{ type: Category.MOTIVATION, value: data.motivation }] : []
+        return [...libs, ...langs, ...years, ...frameworks, ...workplace, ...motivation];
+    }
+
+    const sorted = [...projects].sort((a, b) => {
+
+        if (a.featured && !b.featured) {
+            return -1;
+        }
+        if (!a.featured && b.featured) {
+            return 1;
+        }
+        return 0;
+    })
+
+
+    return sorted.map(project => {
+        return {
+            id: project.id,
+            title: project.title,
+            description: project.description,
+            media: project.media,
+            url: project.url,
+            tags: getTags(project)
+        }
+    })
+}
+function filterData(projects: readonly Project[], filters: readonly ProjectFilter[]): UIProject[] {
 
     if (filters.length === 0) {
-        return [...projects];
+        return convertDataToUi(projects);
     }
-    return projects.filter(project => {
+    const filtered = projects.filter(project => {
         // A project must match ALL provided filters to be included
         return filters.every(filter => {
+            console.log(filter, project[filter.type])
             switch (filter.type) {
-                case "workplace":
-
-                    return project[filter.type].toLowerCase() === filter.value.toLowerCase();
-                case "framework":
-                case "library":
-                case "language":
+                case Category.WORKPLACE:
+                case Category.MOTIVATION:
+                    return project[filter.type] === filter.value;
+                case Category.FRAMEWORK:
+                case Category.LIBRARY:
+                case Category.LANGUAGE:
                     return project[filter.type].some(f => f.toLowerCase() === filter.value.toLowerCase());
-                case "year":
+                case Category.YEAR:
                     const yearValue = parseInt(filter.value);
                     return project.year.includes(yearValue);
                 default:
@@ -35,31 +72,34 @@ function filterData(projects: readonly Project[], filters: readonly ProjectFilte
             }
         });
     })
+
+    return convertDataToUi(filtered);
 }
 
 const extractAvailableFilterfromData = (projects: Project[]) => {
     const allExtractedFilters: ProjectFilter[] = [];
-    for (const filterType of AVAILABLE_FILTERS) {
+    for (const filterType of Object.values(Category)) {
         const uniqueValues = new Set<string>();
         for (const project of projects) {
 
             let projectValue;
 
             switch (filterType) {
-                case "year":
+                case Category.YEAR:
                     for (const year of project.year) {
                         uniqueValues.add(year.toString());
                     }
                     break;
-                case "framework":
-                case "library":
-                case "language":
+                case Category.FRAMEWORK:
+                case Category.LIBRARY:
+                case Category.LANGUAGE:
                     for (const value of project[filterType]) {
                         uniqueValues.add(value)
                     }
                     break;
 
-                case "workplace":
+                case Category.WORKPLACE:
+                case Category.MOTIVATION:
                     projectValue = project[filterType];
                     if (projectValue) {
                         uniqueValues.add(projectValue);
@@ -87,6 +127,7 @@ export const useStore = create<Store>()((set) => ({
     filteredData: [],
     data: [],
     availableFilters: [],
+
     addFilter: (filter: ProjectFilter) => {
         set((state) => {
             const filtered = [...state.filters, filter];
@@ -112,7 +153,7 @@ export const useStore = create<Store>()((set) => ({
     init: (data: Project[]) => set(() => {
         return {
             data: data,
-            filteredData: data,
+            filteredData: filterData(data, []),
             availableFilters: extractAvailableFilterfromData(data)
 
         }

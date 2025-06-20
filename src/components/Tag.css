@@ -3,6 +3,9 @@
     border-radius: 9px;
     padding: 4px 8px;
     color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
 }
 
 .year {
@@ -11,12 +14,12 @@
 }
 
 .framework {
-    background-color: #2d17eb;
+    background-color: #4956ab;
     color: white;
 }
 
 .language {
-    background-color: #870e1e;
+    background-color: #1a1616;
     color: white;
 }
 
@@ -26,4 +29,16 @@
 
 .workplace {
     background-color: #453f40;
+}
+
+.motivation {
+    background-color: #800629;
+}
+
+.close-btn.hidden {
+    display: none;
+}
+
+.close-btn {
+    cursor: pointer;
 }

@@ -1,18 +1,46 @@
 .filter-btn {
     display: flex;
     place-items: center;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
-    padding: 16px;
-    background-color: lightgrey;
+    padding: 4px;
+    background-color: var(--app-primary-light);
+    border-radius: 8px;
     transition: background-color 0.3s ease-in-out;
+    color: var(--app-primary-dark);
 }
 
 .filter-btn:hover {
     background-color: #6a52e3;
 }
 
-.active {
-    background-color: #557846;
+.year.active {
+    background-color: #c99c42;
+    color: var(--app-primary-dark);
+}
+
+.framework.active {
+    background-color: #4956ab;
+    color: var(--app-primary-light);
+}
+
+.language.active {
+    background-color: #1a1616;
+    color: var(--app-primary-light);
+}
+
+.library.active {
+    background-color: #38573b;
+    color: var(--app-primary-light);
+
+}
+
+.workplace.active {
+    background-color: #453f40;
+    color: var(--app-primary-light);
+}
+
+.motivation.active {
+    background-color: #800629;
+    color: var(--app-primary-light);
 }
