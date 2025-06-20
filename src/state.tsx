@@ -55,7 +55,7 @@ function filterData(projects: readonly Project[], filters: readonly ProjectFilte
     const filtered = projects.filter(project => {
         // A project must match ALL provided filters to be included
         return filters.every(filter => {
-            console.log(filter, project[filter.type])
+
             switch (filter.type) {
                 case Category.WORKPLACE:
                 case Category.MOTIVATION:

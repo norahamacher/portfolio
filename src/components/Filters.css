@@ -20,10 +20,10 @@
     place-items: center;
     position: relative;
     gap: 4px;
-
+    cursor: pointer;
 }
 
-.anchor>button {
+#arrow {
     margin-left: auto;
 }
 

@@ -20,12 +20,12 @@ const Filters: React.FC = () => {
     const categories = Object.values(Category);
     return (
         <div className="menu">
-            <div className="anchor">
+            <div className="anchor" onClick={() => toggleOpen(!open)}>
                 <span>Filters</span>
                 {activeFilters.map((filter) => (
                     <Tag title={filter.value} type={filter.type} key={filter.value} closeable></Tag>
                 ))}
-                <button onClick={() => toggleOpen(!open)}>{arrow}</button>
+                <div id="arrow">{arrow}</div>
             </div>
             <div className={dropDownClasses}>
                 {categories.map((category) => (
