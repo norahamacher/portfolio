@@ -8,7 +8,7 @@
   box-sizing: border-box;
   position: relative;
   align-self: flex-start;
-  padding-top: 2em;
+
 }
 
 body {
@@ -42,8 +42,9 @@ button:hover {
 }
 
 #card-container {
-  columns: 420px;
-  width: 90vw;
+  columns: 620px;
+  margin: auto;
+  max-width: 90vw;
   position: relative;
 }
 

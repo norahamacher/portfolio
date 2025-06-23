@@ -165,10 +165,11 @@ export const useStore = create<Store>()((set) => ({
             }
 
             filtered = [...filtered, filter];
+            const filteredData = filterData(state.data, filtered);
             return {
                 filters: filtered,
-                filteredData: filterData(state.data, filtered),
-                projectCount: filtered.length,
+                filteredData: filteredData,
+                projectCount: filteredData.length,
             };
 
 
@@ -177,11 +178,11 @@ export const useStore = create<Store>()((set) => ({
     removeFilter: (filter: ProjectFilter) => {
         set((state) => {
             const filtered = state.filters.filter(f => f.value !== filter.value);
-
+            const filteredData = filterData(state.data, filtered);
             return {
                 filters: filtered,
-                filteredData: filterData(state.data, filtered),
-                projectCount: filtered.length,
+                filteredData: filteredData,
+                projectCount: filteredData.length,
             };
         })
     },

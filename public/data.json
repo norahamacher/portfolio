@@ -343,7 +343,7 @@
             "id": "portfolio",
             "title": "Portfolio",
             "description": [
-                "The page you're looking at!"
+                "The page you're looking at! I used ReactJS along with zustand state management to create a responsive, mobile-first filterable view of projects I have been involved in."
             ],
             "url": [],
             "media": [],
