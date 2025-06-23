@@ -8,6 +8,7 @@ export enum Category {
     YEAR = "year",
     LIBRARY = "library",
     MOTIVATION = "motivation",
+    FEATURED = "featured"
 }
 
 export const OR_CATEGORIES = [Category.WORKPLACE, Category.MOTIVATION]
@@ -32,6 +33,8 @@ export type Link = {
     title: string,
 }
 
+export type Featured = "yes" | "no";
+
 export type Project = {
     "title": string,
     "description": string[],
@@ -44,7 +47,7 @@ export type Project = {
     "media": Media[]
     "url": Link[],
     "motivation": Motivation,
-    "featured"?: boolean
+    "featured"?: boolean;
 }
 
 export type UIProject = {

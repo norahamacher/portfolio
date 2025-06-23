@@ -20,6 +20,7 @@ body {
   --app-year-color: #0000ff;
   --app-library-color: #1e90ff;
   --app-motivation-color: #ff1493;
+  --app-featured-color: #ffdab9;
 
   background: var(--app-primary-dark);
   box-sizing: border-box;
@@ -40,23 +41,13 @@ button:hover {
 }
 
 #card-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
+  columns: 420px;
   width: 90vw;
   position: relative;
 }
 
-@media (min-width: 944px) {
-  #card-container {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1424px) {
-  #card-container {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+.card {
+  margin-bottom: 1em;
 }
 
 h2 {

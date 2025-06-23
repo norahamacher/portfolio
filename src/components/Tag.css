@@ -36,6 +36,10 @@
     color: var(--app-primary-light);
 }
 
+.featured {
+    background-color: var(--app-featured-color);
+}
+
 .close-btn.hidden {
     display: none;
 }

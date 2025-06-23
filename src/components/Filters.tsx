@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
 
-import './Filters.css'
+import styles from './Filters.module.css'
 import { useStore } from '../state';
 import FilterButton from './FilterButton';
 import Tag from './Tag';
@@ -59,10 +59,10 @@ const Filters: React.FC = () => {
 
     const foundProjectString = `Filters (${projectCount} project${projectCount !== 1 ? "s" : ""})`
     return (
-        <div className="menu">
-            <div className="anchor" onClick={() => toggleOpen(!open)}>
+        <div className={styles.menu}>
+            <div className={styles.anchor} onClick={() => toggleOpen(!open)}>
                 <span>{foundProjectString}</span>
-                <div className="filter-tags">
+                <div className={styles["filter-tags"]}>
                     <AnimatePresence>
                         {activeFilters.map((filter) => (
 
@@ -71,27 +71,27 @@ const Filters: React.FC = () => {
                         ))}
                     </AnimatePresence>
                 </div>
-                <h4 className="title">Nora's Projects</h4>
-                <div className="actions">
-                    <button disabled={activeFilters.length === 0} onClick={onClearFilters} id="clear-filters">Clear Filters</button>
-                    <div id="arrow">{arrow}</div>
+                <h4 className={styles.title}>Nora's Projects</h4>
+                <div className={styles.actions}>
+                    <button disabled={activeFilters.length === 0} onClick={onClearFilters} id={styles.clearFilters}>Clear Filters</button>
+                    <div id={styles.arrow}>{arrow}</div>
                 </div>
             </div>
             <AnimatePresence>
                 {open && (
                     <motion.div
-                        key="filter-dropdown"
+                        key={styles.filterDropdown}
                         variants={filterVariants}
                         initial="hidden" // Start from the 'hidden' state
                         animate={"visible"}
                         exit={"exit"}
 
                     >
-                        <div className="filters">
+                        <div className={styles.filters}>
                             {categories.map((category) => (
-                                <div key={category} className="categories">
-                                    <p className="category-title">{category}</p>
-                                    <div className="category-entries">
+                                <div key={category} className={styles.categories}>
+                                    <p className={styles["category-title"]}>{category}</p>
+                                    <div className={styles["category-entries"]}>
                                         {availableFilters.filter(f => f.type === category).sort((a, b) => a.value.localeCompare(b.value)).map((filter) => (
                                             <FilterButton
                                                 key={filter.value} type={filter.type} value={filter.value}></FilterButton>

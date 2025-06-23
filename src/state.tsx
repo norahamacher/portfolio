@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { Category, OR_CATEGORIES, type Project, type ProjectFilter, type TagData, type UIProject } from './domain'
+import { Category, OR_CATEGORIES, type Featured, type Project, type ProjectFilter, type TagData, type UIProject } from './domain'
 
 
 type Store = {
@@ -55,7 +55,7 @@ function filterData(projects: readonly Project[], filters: readonly ProjectFilte
         return convertDataToUi(projects);
     }
     const filtered = projects.filter(project => {
-        // A 
+
         return filters.every(filter => {
 
             switch (filter.type) {
@@ -69,6 +69,14 @@ function filterData(projects: readonly Project[], filters: readonly ProjectFilte
                 case Category.YEAR:
                     const yearValue = parseInt(filter.value);
                     return project.year.includes(yearValue);
+                case Category.FEATURED:
+                    const featured = filter.value as Featured;
+
+                    if (featured === "yes") {
+                        return project.featured === true;
+                    } else {
+                        return !project.featured;
+                    }
                 default:
                     return false;
             }
@@ -105,6 +113,14 @@ const extractAvailableFilterfromData = (projects: Project[]) => {
                     projectValue = project[filterType];
                     if (projectValue) {
                         uniqueValues.add(projectValue);
+                    }
+                    break;
+                case Category.FEATURED:
+                    projectValue = project[filterType];
+                    if (projectValue) {
+                        uniqueValues.add("yes");
+                    } else {
+                        uniqueValues.add("no");
                     }
                     break;
                 default:

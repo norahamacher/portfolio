@@ -12,6 +12,8 @@
     width: 100%;
     transition: width 0.4s ease-in-out;
     position: relative;
+    break-inside: avoid;
+    margin-bottom: 12px;
 }
 
 
