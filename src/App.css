@@ -8,6 +8,7 @@
   box-sizing: border-box;
   position: relative;
   align-self: flex-start;
+  padding-top: 2em;
 }
 
 body {
@@ -61,4 +62,12 @@ h2 {
 
 .not-found {
   color: var(--app-primary-light);
+}
+
+
+
+@media screen and (min-width: 528px) {
+  #root {
+    padding-top: 0;
+  }
 }

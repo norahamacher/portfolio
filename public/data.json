@@ -5,7 +5,7 @@
             "title": "Team Structure Visualisation",
             "description": [
                 "Primary Frontend developer of a highly dynamic and responsive internal frontend application aimed at demystifying complex agile team structures across Woolworths Group's 200k+ employee base. This was a greenfield project, and a rewarding collaborative effort with design, business, and backend engineers.",
-                "The main features are the intuitive graph, where the key information of each team or employee is displayed, along with a sidepanel, containing more information and a list view of the graph - this was elevated and optimised fro mobile.",
+                "The main features are the intuitive graph, where the key information of each team or employee is displayed, along with a sidepanel, containing more information and a list view of the graph - this was elevated and optimised for mobile.",
                 "The app empowers every employee to easily visualise and explore their own team's place, and the broader organisational connections, transcending the limitations of static organisational charts. This critical internal tool, significantly improved organisational clarity and discoverability.",
                 "Due to its internal corporate nature I can not provide imagery on this page, feel free to ask me about it!"
             ],
@@ -312,7 +312,8 @@
             "description": [
                 "Inspired by the at the time rising popularity of scrollytellers, I played around with a system to allow users to add their content via JSON and generate a scrollyteller.",
                 "The idea was that other parameters, such as locations on a map, display of a certain image or video, could be linked to positions of the scroll.",
-                "It is unfinished, but check out the proof of concept using public Australian power production data below"
+                "It is unfinished, and a lot of it is deprecated now (and I would do things differently now as well), but check out the proof of concept using public Australian power production data below.",
+                "I am planning to work on a modern version of this, so stay tuned."
             ],
             "url": [
                 {

@@ -1,5 +1,5 @@
 .menu {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 100vw;
     z-index: 100;
@@ -8,6 +8,7 @@
     padding: 16px 24px;
     box-sizing: border-box;
     border-radius: 8px;
+    box-shadow: 0 0 4px 4px var(--app-primary-dark);
 }
 
 .filters {
@@ -30,6 +31,7 @@
     color: var(--app-primary-dark);
     margin: 0;
     order: -1;
+    margin-right: 100px;
 }
 
 .anchor {
@@ -45,7 +47,7 @@
 .anchor>span {
     font-size: 16px;
     font-weight: 600;
-    margin-right: 24px;
+
 }
 
 #arrow {
@@ -54,11 +56,11 @@
 }
 
 .actions {
-
     display: flex;
     gap: 6px;
     align-items: center;
     order: 3;
+    margin: auto;
 }
 
 #clear-filters[disabled] {
@@ -88,6 +90,11 @@
     flex-wrap: wrap;
 }
 
+@media screen and (min-width: 528px) {
+    .actions {
+        margin: 0;
+    }
+}
 
 
 @media screen and (min-width: 1230px) {
@@ -133,6 +140,9 @@
         position: relative;
     }
 
+    .title {
+        margin: 0;
+    }
 
     .category-entries::after {
         content: '';

@@ -73,7 +73,7 @@ const Filters: React.FC = () => {
                 </div>
                 <h4 className={styles.title}>Nora's Projects</h4>
                 <div className={styles.actions}>
-                    <button disabled={activeFilters.length === 0} onClick={onClearFilters} id={styles.clearFilters}>Clear Filters</button>
+                    <button disabled={activeFilters.length === 0} onClick={onClearFilters} id={styles["clear-filters"]}>Clear Filters</button>
                     <div id={styles.arrow}>{arrow}</div>
                 </div>
             </div>
