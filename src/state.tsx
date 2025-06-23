@@ -37,7 +37,6 @@ function convertDataToUi(projects: readonly Project[]): UIProject[] {
         return 0;
     })
 
-
     return sorted.map(project => {
         return {
             id: project.id,
@@ -45,7 +44,8 @@ function convertDataToUi(projects: readonly Project[]): UIProject[] {
             description: project.description,
             media: project.media,
             url: project.url,
-            tags: getTags(project)
+            tags: getTags(project),
+            featured: project.featured
         }
     })
 }
@@ -144,7 +144,6 @@ export const useStore = create<Store>()((set) => ({
             let filtered;
             if (OR_CATEGORIES.includes(filter.type)) {
                 filtered = [...state.filters].filter(f => f.type !== filter.type);
-                console.log(filtered);
             } else {
                 filtered = [...state.filters];
             }

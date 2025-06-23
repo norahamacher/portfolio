@@ -4,19 +4,12 @@
             "id": "tmv",
             "title": "Team Structure Visualisation",
             "description": [
-                "A dynamic and responsive internal frontend tool to visualise and explore complex agile team structures across a 200k+ employee organisation.",
-                "It has both graph and list views, the latter elevated and optimised for mobile.",
-                "This was a greenfield project, and it was very rewarding work to build a very complex app from scratch in close collaboration with designers, stakeholders and backend.",
-                "Through this app it became easier for any Woolworths employee to view and explore their own or others teams and their connection within the organisation, not only in a static org chart.",
-                "Due to this being an internal corporate page, no live demo is available. Check out the video below!"
+                "Primary Frontend developer of a highly dynamic and responsive internal frontend application aimed at demystifying complex agile team structures across Woolworths Group's 200k+ employee base. This was a greenfield project, and a rewarding collaborative effort with design, business, and backend engineers.",
+                "The main features are the intuitive graph, where the key information of each team or employee is displayed, along with a sidepanel, containing more information and a list view of the graph - this was elevated and optimised fro mobile.",
+                "The app empowers every employee to easily visualise and explore their own team's place, and the broader organisational connections, transcending the limitations of static organisational charts. This critical internal tool, significantly improved organisational clarity and discoverability.",
+                "Due to its internal corporate nature I can not provide imagery on this page, feel free to ask me about it!"
             ],
-            "media": [
-                {
-                    "title": "Video Demo: TeamView Visualisation",
-                    "type": "video",
-                    "src": "./tmvDemo.mp4"
-                }
-            ],
+            "media": [],
             "year": [
                 2023,
                 2024,
@@ -39,17 +32,13 @@
             "id": "wflw",
             "title": "Workflows",
             "description": [
-                "Automated workflows for requesting and approving structural changes to teams or members, replacing manual email/spreadsheet-based business processes.",
-                "This was developed in conjunction with an admin portal to list and take action on those workflows, and a detailed view of the workflows to facilitate actions for authorised team members. The detail page and admin portal have real-time updates via polling.",
-                "This feature greatly reduced human errors and significantly improving process efficiency and visibility."
+                "Tackled inefficient manual processes for team and member structural changes by developing automated workflows for requests and approvals of changes to team members, such as allocation to a squad or changes to the role.",
+                "The submitted request can be viewed in a workflow detail view by the initator, admin, or home line manager, where each step which has been performed on the workflow, along with the detailed changes, is laid out. Along with this an admin portal was developed, displaying a list view of all workflow requests along with the ability to perform actions on them. Both detail view and admin portal include real-time updates through polling",
+                "I developed the whole detail view, the action buttons and error handling of the admin portal, along with the polling component for both sites. I also helped in the backend with some validation and generation of the steps to display on the detail page.",
+                "The introduction of these features drastically reduced human errors, leading to a marked improvement in operational efficiency and transparency.",
+                "Due to its internal corporate nature I can not provide imagery on this page, feel free to ask me about it!"
             ],
-            "media": [
-                {
-                    "title": "Video Demo: Workflows",
-                    "type": "video",
-                    "src": "./workflowDemo.mp4"
-                }
-            ],
+            "media": [],
             "year": [
                 2024
             ],
@@ -67,9 +56,9 @@
             "id": "wds",
             "title": "Design System Components",
             "description": [
-                "During my time at Woolworths Group I contributed to the internal Design System for use across platforms with consistency.",
-                "The components are written in highly performant Lit, with a focus on reusability and scalability. Many of them make use of the web components slot mechanic and avoid passing in complex structures as properties in order to maintain ease of use and serialisability.",
-                "Storybook as a tool has been invaluable to develop robust components and the aim was to, along with unit tests, cover all the different states a component can be in."
+                "I contributed substantially to Woolworths Group's internal Design System, fostering consistent UI/UX across various platforms. I developed components using Lit, prioritising high performance, reusability, and scalability.",
+                " A core principle was the intelligent application of Web Components' slot mechanic, preventing unwieldy prop drilling, as well as promoting ease of use and serialisability.",
+                "Storybook was heavily used in this development, enabling us to build robust components and achieve comprehensive test coverage for all their diverse states."
             ],
             "media": [
                 {
@@ -127,7 +116,7 @@
             "url": [
                 {
                     "title": "MultiViz Urban Diversity",
-                    "type": "website",
+                    "type": "check it out",
                     "src": "https://app.urbandiversity.cloud.edu.au/"
                 }
             ],
@@ -204,7 +193,7 @@
             "url": [
                 {
                     "title": "Global Encounters",
-                    "type": "website",
+                    "type": "check it out",
                     "src": "https://globalencounters.net/"
                 }
             ],
@@ -328,7 +317,7 @@
             "url": [
                 {
                     "title": "Australian Energy production distribution over the years",
-                    "type": "website",
+                    "type": "check it out",
                     "src": "https://norahamacher.github.io/aussieElectro/"
                 }
             ],
@@ -346,7 +335,8 @@
                 "MapBox",
                 "ChartJS"
             ],
-            "motivation": "private"
+            "motivation": "private",
+            "featured": true
         },
         {
             "id": "portfolio",

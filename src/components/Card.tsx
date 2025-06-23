@@ -12,6 +12,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
     const links = data.url ?? [];
     const tags = data.tags;
     const media = data.media;
+
     return (
         <>
             <motion.div
@@ -22,7 +23,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 transition={{ duration: 0.3 }}
 
             >
-                <div className="card">
+                <div className={`card ${data.featured ? "featured" : ""}`}>
                     <h3>{data.title}</h3>
                     <div className="description">{data.description.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
@@ -44,6 +45,10 @@ const Card: React.FC<CardProps> = ({ data }) => {
                             <Tag key={tag.value} title={tag.value} type={tag.type}></Tag>
                         ))}
                     </div>
+
+                    {data.featured && (
+                        <img className="star" src="./star.svg"></img>
+                    )}
                 </div>
             </motion.div >
 

@@ -26,7 +26,7 @@ const Media: React.FC<MediaProps> = ({ media }) => {
     const getIcon = () => {
         switch (media.type) {
             case 'image':
-                return '📸  ';
+                return '🖼️  ';
             case "video":
                 return '▶️  '
             default:
@@ -36,7 +36,7 @@ const Media: React.FC<MediaProps> = ({ media }) => {
     return (
         <>
 
-            <button onClick={handleOpenDialog}>{getIcon()}   {media.title}</button>
+            <div className="media" onClick={handleOpenDialog}>{getIcon()}   {media.title}</div>
             <Dialog isOpen={isDialogOpen} onClose={handleCloseDialog} content={media}></Dialog>
 
         </>

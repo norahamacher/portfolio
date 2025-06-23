@@ -32,6 +32,7 @@ button {
   background: var(--app-primary-light);
   color: var(--app-primary-dark);
   border: 1px solid var(--app-primary-dark);
+  font-size: 12px;
 }
 
 button:hover {
