@@ -1,30 +1,69 @@
-.filters {
-    display: flex;
-    gap: 12px;
-}
-
-.filters.closed {
-    display: none;
-}
-
 .menu {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 100;
     background: var(--app-primary-light);
     color: var(--app-primary-dark);
-    padding: 4px;
-    margin-bottom: 8px;
+    padding: 16px 24px;
+    box-sizing: border-box;
+}
+
+.filters {
+    height: calc(100vh - 64px);
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    order: 1;
+}
+
+.filter-tags {
+    display: none;
+    gap: 12px;
+
+}
+
+.title {
+    color: var(--app-primary-dark);
+    margin: 0;
+    order: -1;
 }
 
 .anchor {
     display: flex;
     place-items: center;
+    justify-content: space-between;
     position: relative;
-    gap: 4px;
+    gap: 8px;
     cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.anchor>span {
+    font-size: 16px;
+    font-weight: 600;
 }
 
 #arrow {
     margin-left: auto;
+    font-weight: 500;
+}
+
+.actions {
+
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    order: 3;
+}
+
+#clear-filters[disabled] {
+    pointer-events: none;
+    cursor: pointer;
+    color: lightgrey;
 }
 
 .anchor>span {
@@ -39,4 +78,60 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.category-entries {
+    display: flex;
+    column-gap: 32px;
+    row-gap: 8px;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 944px) {
+    .menu {
+        padding: 4px;
+        width: 100%;
+        margin-bottom: 8px;
+        position: relative;
+    }
+
+    .filters {
+        height: fit-content;
+        flex-direction: row;
+        column-gap: 46px;
+    }
+
+    .filter-tags {
+        display: flex;
+    }
+
+    .category-entries {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        /* Tell the grid to fill columns first, rather than rows */
+        grid-auto-flow: column;
+        grid-column-gap: 8px;
+        position: relative;
+    }
+
+    .category-entries::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -23px;
+        width: 1px;
+        height: 100%;
+        background-color: var(--app-primary-dark);
+        opacity: 0.3;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .actions {
+        gap: 12px;
+    }
+
+
 }

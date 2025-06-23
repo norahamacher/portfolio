@@ -1,23 +1,41 @@
 #root {
   max-width: 2024px;
-  margin: 0 auto;
-  padding: 2rem;
-  display: flex;
 
+  display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: start;
   box-sizing: border-box;
   position: relative;
-
   align-self: flex-start;
 }
 
 body {
   --app-primary-dark: #311447;
-  --app-primary-light: #ededed;
+  --app-primary-light: #fff;
+  --app-hover: #af8db8;
+  --app-workplace-color: #66cdaa;
+  --app-language-color: #ff8c00;
+  --app-framework-color: #00ff00;
+  --app-year-color: #0000ff;
+  --app-library-color: #1e90ff;
+  --app-motivation-color: #ff1493;
 
   background: var(--app-primary-dark);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background: var(--app-primary-light);
+  color: var(--app-primary-dark);
+  border: 1px solid var(--app-primary-dark);
+}
+
+button:hover {
+  outline: 1px solid blue;
 }
 
 #card-container {
@@ -25,7 +43,6 @@ body {
   grid-template-columns: 1fr;
   gap: 12px;
   width: 90vw;
-  max-width: 100%;
   position: relative;
 }
 

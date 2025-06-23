@@ -2,37 +2,38 @@
     font-size: 12px;
     border-radius: 9px;
     padding: 4px 8px;
-    color: white;
+    color: var(--app-primary-dark);
     display: flex;
     flex-direction: row;
     gap: 2px;
 }
 
 .year {
-    background-color: #c99c42;
-    color: black;
+    background-color: var(--app-year-color);
+    color: var(--app-primary-light);
 }
 
 .framework {
-    background-color: #4956ab;
-    color: white;
+    background-color: var(--app-framework-color);
+
 }
 
 .language {
-    background-color: #1a1616;
+    background-color: var(--app-language-color);
     color: white;
 }
 
 .library {
-    background-color: #38573b;
+    background-color: var(--app-library-color);
 }
 
 .workplace {
-    background-color: #453f40;
+    background-color: var(--app-workplace-color);
 }
 
 .motivation {
-    background-color: #800629;
+    background-color: var(--app-motivation-color);
+    color: var(--app-primary-light);
 }
 
 .close-btn.hidden {

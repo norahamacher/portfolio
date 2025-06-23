@@ -150,9 +150,10 @@
             ],
             "library": [
                 "MapBox",
-                "MaterialUI"
+                "MaterialUI",
+                "d3"
             ],
-            "workplace": "Monash University - Data Science and AI Platform",
+            "workplace": "Monash Data Science and AI Platform",
             "featured": true,
             "motivation": "work"
         },
@@ -191,7 +192,7 @@
                 "Javascript"
             ],
             "library": [],
-            "workplace": "Monash University - Data Science and AI Platform",
+            "workplace": "Monash Data Science and AI Platform",
             "motivation": "work"
         },
         {
@@ -220,7 +221,7 @@
             "library": [
                 "MaterialUI"
             ],
-            "workplace": "Monash University - Data Science and AI Platform",
+            "workplace": "Monash Data Science and AI Platform",
             "motivation": "work"
         },
         {
@@ -254,7 +255,7 @@
                 "Javascript"
             ],
             "library": [],
-            "workplace": "Monash University - Monash Immersive Visualisation Platform",
+            "workplace": "Monash Immersive Visualisation Platform",
             "motivation": "work"
         },
         {
@@ -284,7 +285,7 @@
             "library": [
                 "ChartJS"
             ],
-            "workplace": "Monash University - Data Science and AI Platform",
+            "workplace": "Monash Data Science and AI Platform",
             "motivation": "work"
         },
         {
@@ -313,7 +314,7 @@
                 "C#"
             ],
             "library": [],
-            "workplace": "Monash University - Monash Immersive Visualisation Platform",
+            "workplace": "Monash Immersive Visualisation Platform",
             "motivation": "work"
         },
         {

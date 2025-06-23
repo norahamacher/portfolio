@@ -7,8 +7,10 @@ type Store = {
     filteredData: readonly UIProject[],
     availableFilters: readonly ProjectFilter[],
     data: readonly Project[],
+    projectCount: number;
     addFilter: (filter: ProjectFilter) => void,
     removeFilter: (filter: ProjectFilter) => void;
+    clearFilters: () => void;
     init: (data: Project[]) => void;
 }
 
@@ -127,7 +129,16 @@ export const useStore = create<Store>()((set) => ({
     filteredData: [],
     data: [],
     availableFilters: [],
-
+    projectCount: 0,
+    clearFilters: () => {
+        set((state) => {
+            return {
+                filters: [],
+                filteredData: filterData(state.data, []),
+                projectCount: state.data.length,
+            }
+        })
+    },
     addFilter: (filter: ProjectFilter) => {
         set((state) => {
             let filtered;
@@ -141,7 +152,8 @@ export const useStore = create<Store>()((set) => ({
             filtered = [...filtered, filter];
             return {
                 filters: filtered,
-                filteredData: filterData(state.data, filtered)
+                filteredData: filterData(state.data, filtered),
+                projectCount: filtered.length,
             };
 
 
@@ -153,7 +165,8 @@ export const useStore = create<Store>()((set) => ({
 
             return {
                 filters: filtered,
-                filteredData: filterData(state.data, filtered)
+                filteredData: filterData(state.data, filtered),
+                projectCount: filtered.length,
             };
         })
     },
@@ -161,8 +174,8 @@ export const useStore = create<Store>()((set) => ({
         return {
             data: data,
             filteredData: filterData(data, []),
-            availableFilters: extractAvailableFilterfromData(data)
-
+            availableFilters: extractAvailableFilterfromData(data),
+            projectCount: data.length
         }
     }),
 

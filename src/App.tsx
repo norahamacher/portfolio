@@ -36,7 +36,7 @@ function App() {
   }, [])
   return (
     <>
-      <h2>Nora Hamacher's Projects</h2>
+      <h2>Nora's Projects</h2>
       <Filters></Filters>
       <div id="card-container">
         <AnimatePresence>

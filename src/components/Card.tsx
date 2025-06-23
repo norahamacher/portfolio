@@ -15,11 +15,11 @@ const Card: React.FC<CardProps> = ({ data }) => {
     return (
         <>
             <motion.div
-                layout // Enables smooth layout transitions when items are added/removed/reordered
-                initial={{ opacity: 0, scale: 0.8 }} // Initial state when component mounts
-                animate={{ opacity: 1, scale: 1 }} // Target state when component is present
-                exit={{ opacity: 0, scale: 0.8 }} // State when component is about to unmount
-                transition={{ duration: 0.3 }} // Animation duration
+                layout
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
 
             >
                 <div className="card">

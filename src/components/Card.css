@@ -9,8 +9,6 @@
     color: var(--app-primary-dark);
     background: var(--app-primary-light);
     box-sizing: border-box;
-    min-width: 420px;
-    max-width: 100%;
     width: 100%;
     transition: width 0.4s ease-in-out;
 }

@@ -11,36 +11,34 @@
 }
 
 .filter-btn:hover {
-    background-color: #6a52e3;
+    background-color: var(--app-hover);
 }
 
 .year.active {
-    background-color: #c99c42;
-    color: var(--app-primary-dark);
-}
-
-.framework.active {
-    background-color: #4956ab;
+    background-color: var(--app-year-color);
     color: var(--app-primary-light);
 }
 
+.framework.active {
+    background-color: var(--app-framework-color);
+}
+
 .language.active {
-    background-color: #1a1616;
+    background-color: var(--app-language-color);
     color: var(--app-primary-light);
 }
 
 .library.active {
-    background-color: #38573b;
+    background-color: var(--app-library-color);
     color: var(--app-primary-light);
 
 }
 
 .workplace.active {
-    background-color: #453f40;
-    color: var(--app-primary-light);
+    background-color: var(--app-workplace-color);
 }
 
 .motivation.active {
-    background-color: #800629;
+    background-color: var(--app-motivation-color);
     color: var(--app-primary-light);
 }
