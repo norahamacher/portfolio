@@ -24,7 +24,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 transition={{ duration: 0.3 }}
 
             >
-                <div className={`${styles.card} ${data.featured ? styles.featured : ""}`}>
+                <div data-cy="card" className={`${styles.card} ${data.featured ? styles.featured : ""}`}>
                     <h3>{data.title}</h3>
                     <div className={styles.description}>{data.description.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>

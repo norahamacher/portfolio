@@ -32,7 +32,7 @@ const Tag: React.FC<TagProps> = ({ title, type, closeable }) => {
             key={title}
 
         >
-            <div className={classes}>
+            <div data-cy="tag" className={classes}>
                 {title}
                 <div onClick={onClick} className={closeClasses}> ✖️ </div>
             </div>

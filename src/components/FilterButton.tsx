@@ -26,7 +26,7 @@ const FilterButton: React.FC<FilterButtonProps> = ({ value, type }) => {
     const className = `filter-btn ${isActive ? "active" : ""} ${type}`;
     return (
 
-        <div onClick={handleClick} className={className}>{value}</div>
+        <div data-cy="filter-button" onClick={handleClick} className={className}>{value}</div>
     )
 }
 

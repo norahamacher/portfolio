@@ -343,7 +343,8 @@
             "id": "portfolio",
             "title": "Portfolio",
             "description": [
-                "The page you're looking at! I used ReactJS along with zustand state management to create a responsive, mobile-first filterable view of projects I have been involved in."
+                "The page you're looking at! I used ReactJS along with zustand state management to create a responsive, mobile-first filterable view of projects I have been involved in.",
+                "Cypress used for e2e testing and in ci/cd pipeline for hosting on GitHub."
             ],
             "url": [],
             "media": [],
@@ -358,7 +359,8 @@
             ],
             "library": [
                 "framer-motion",
-                "zustand"
+                "zustand",
+                "cypress"
             ],
             "motivation": "private"
         }

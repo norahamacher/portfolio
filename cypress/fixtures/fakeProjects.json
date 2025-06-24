@@ -1,0 +1,75 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "test 1",
+      "description": [
+        "desc1",
+        "desc2"
+      ],
+      "media": [],
+      "year": [
+        2023
+      ],
+      "framework": [
+        "Framework1"
+      ],
+      "language": [
+        "Language1"
+      ],
+      "library": [
+        "Library1"
+      ],
+      "workplace": "Workplace1",
+      "featured": true,
+      "motivation": "work"
+    },
+    {
+      "id": "2",
+      "title": "test 2",
+      "description": [
+        "desc1",
+        "desc2"
+      ],
+      "media": [],
+      "year": [
+        2022
+      ],
+      "framework": [
+        "Framework1"
+      ],
+      "language": [
+        "Language2"
+      ],
+      "library": [
+        "Library2"
+      ],
+      "workplace": "Workplace1",
+      "featured": true,
+      "motivation": "work"
+    },
+    {
+      "id": "3",
+      "title": "test 3",
+      "description": [
+        "desc1",
+        "desc2"
+      ],
+      "media": [],
+      "year": [
+        2025
+      ],
+      "framework": [
+        "Framework3"
+      ],
+      "language": [
+        "Language3"
+      ],
+      "library": [
+        "Library3"
+      ],
+      "workplace": "Workplace3",
+      "motivation": "work"
+    }
+  ]
+}

@@ -59,8 +59,8 @@ const Filters: React.FC = () => {
 
     const foundProjectString = `Filters (${projectCount} project${projectCount !== 1 ? "s" : ""})`
     return (
-        <div className={styles.menu}>
-            <div className={styles.anchor} onClick={() => toggleOpen(!open)}>
+        <div data-cy="filters-menu" className={styles.menu}>
+            <div data-cy="filters-anchor" className={styles.anchor} onClick={() => toggleOpen(!open)}>
                 <span>{foundProjectString}</span>
                 <div className={styles["filter-tags"]}>
                     <AnimatePresence>
