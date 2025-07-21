@@ -1,13 +1,16 @@
 import { create } from 'zustand'
 import { Category, OR_CATEGORIES, type Featured, type Project, type ProjectFilter, type TagData, type UIProject } from './domain'
 
+type Theme = 'light' | 'dark';
 
 type Store = {
+    theme: Theme,
     filters: ProjectFilter[],
     filteredData: readonly UIProject[],
     availableFilters: readonly ProjectFilter[],
     data: readonly Project[],
     projectCount: number;
+    toggleTheme: () => void,
     addFilter: (filter: ProjectFilter) => void,
     removeFilter: (filter: ProjectFilter) => void;
     clearFilters: () => void;
@@ -141,6 +144,7 @@ const extractAvailableFilterfromData = (projects: Project[]) => {
     return allExtractedFilters;
 }
 export const useStore = create<Store>()((set) => ({
+    theme: 'light',
     filters: [],
     filteredData: [],
     data: [],
@@ -154,6 +158,11 @@ export const useStore = create<Store>()((set) => ({
                 projectCount: state.data.length,
             }
         })
+    },
+    toggleTheme: () => {
+        set((state) => ({
+            theme: state.theme === 'light' ? 'dark' : 'light'
+        }));
     },
     addFilter: (filter: ProjectFilter) => {
         set((state) => {

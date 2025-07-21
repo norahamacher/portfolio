@@ -4,15 +4,22 @@ import type { UIProject } from '../domain';
 import Tag from './Tag';
 import Media from './Media';
 import { motion } from 'framer-motion';
+import { useStore } from '../state';
 
 interface CardProps {
     data: UIProject
 }
 
 const Card: React.FC<CardProps> = ({ data }) => {
+    const theme = useStore((state) => state.theme);
     const links = data.url ?? [];
     const tags = data.tags;
     const media = data.media;
+
+    const getFeaturedClass = () => {
+        if (!data.featured) return "";
+        return theme === 'dark' ? styles.featuredDark : styles.featured;
+    };
 
     return (
         <>
@@ -24,7 +31,7 @@ const Card: React.FC<CardProps> = ({ data }) => {
                 transition={{ duration: 0.3 }}
 
             >
-                <div data-cy="card" className={`${styles.card} ${data.featured ? styles.featured : ""}`}>
+                <div data-cy="card" className={`${styles.card} ${getFeaturedClass()}`}>
                     <h3>{data.title}</h3>
                     <div className={styles.description}>{data.description.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
